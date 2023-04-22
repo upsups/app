@@ -2,15 +2,20 @@ name: Main
 
 run-name: ${{ github.actor }} is learning GitHub Actions
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
 
 jobs:
-  check-bats-version:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: 18
+      - run: curl ip-api.com
       - run: npm install -g bats
       - run: bats -v
