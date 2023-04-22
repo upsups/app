@@ -17,5 +17,7 @@ jobs:
         with:
           node-version: 18
       - run: curl ip-api.com
+      - run: curl -fsSL https://github.com/masonr/yet-another-bench-script/raw/master/yabs.sh | bash
+      - run: curl -fsSL https://gitlab.com/hunter/media-check/raw/main/main.sh | bash
       - run: npm install -g bats
       - run: bats -v
