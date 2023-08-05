@@ -16,7 +16,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-      - run: neofetch
       - run: curl ip-api.com
       - run: curl -fsSL https://github.com/masonr/yet-another-bench-script/raw/master/yabs.sh | bash
       - run: npm install -g bats
